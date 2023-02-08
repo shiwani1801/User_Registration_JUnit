@@ -34,21 +34,21 @@ public class RegExTest {
     public void validateLastNameTest() {
         RegExMain obj = new RegExMain();
         System.out.println("Valid last name of user");
-        String firstName = "Paunikar";
-        Assert.assertTrue(obj.validateLastName(firstName));
+        String lastName = "Paunikar";
+        Assert.assertTrue(obj.validateLastName(lastName));
     }
     @Test
     public void validateLastNameLowerCaseShouldFail() {
         RegExMain obj = new RegExMain();
         System.out.println("Invalid last name of user which contains only lowercase");
-        String firstName = "paunikar";
-        Assert.assertFalse(obj.validateLastName(firstName));
+        String lastName = "paunikar";
+        Assert.assertFalse(obj.validateLastName(lastName));
     }
     @Test
     public void validateLastNameLessThanThree() {
         RegExMain obj = new RegExMain();
         System.out.println("Invalid last name of user which having only three characters");
-        String firstName = "pan";
-        Assert.assertFalse(obj.validateLastName(firstName));
+        String lastName = "pan";
+        Assert.assertFalse(obj.validateLastName(lastName));
     }
 }
