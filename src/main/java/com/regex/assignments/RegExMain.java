@@ -6,4 +6,8 @@ public class RegExMain {
     public boolean validateFirstName(String firstName) {
         return Pattern.matches("[A-Z][a-z]{3,}",firstName);
     }
+    public boolean validateLastName(String lastName) {
+        return Pattern.matches("[A-Z][a-z]{3,}",lastName);
+    }
+
 }
