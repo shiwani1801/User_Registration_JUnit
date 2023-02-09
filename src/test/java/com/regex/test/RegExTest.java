@@ -4,8 +4,14 @@ import com.regex.assignments.RegExMain;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class RegExTest {
     RegExMain obj = new RegExMain();
+    List<String> emailList = new ArrayList<>();
+
     @BeforeClass
     public static void welcomeText() {
         System.out.println("Welcome to User Registration Problem");
@@ -134,6 +140,31 @@ public class RegExTest {
         System.out.println("Invalid password of user which doesn't contains special character");
         String password = "Shiwani123";
         Assert.assertFalse(obj.validatePassword(password));
+    }
+    @Test
+    public void validateSampleEmailTest() {
+        System.out.println("Validate some sample email ids");
+        emailList.add("abc@yahoo.com");
+        emailList.add("abc-100@yahoo.com");
+        emailList.add("abc111@abc.com");
+        emailList.add("abc.100@yahoo.com");
+        emailList.add("abc-100@abc.net");
+        emailList.add("abc.100@abc.com.au");
+        emailList.add("abc@1.com");
+        emailList.add("abc@gmail.com.com");
+        emailList.add("abc+100@gmail.com");
+        for (int i = 0; i < emailList.size(); i++)
+        {
+            try
+            {
+                Assert.assertTrue(obj.validEmail(emailList.get(i)));
+            }
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage());
+                emailList.remove(i);
+            }
+        }
     }
 }
 
