@@ -15,5 +15,7 @@ public class RegExMain {
     public boolean validatePhoneNo(String phoneNo) {
         return Pattern.matches("^\\++[91]+\\s+[789]\\d{9}$",phoneNo);
     }
-
+    public boolean validatePassword(String password) {
+        return Pattern.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$",password);
+    }
 }
