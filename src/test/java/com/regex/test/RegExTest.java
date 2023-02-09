@@ -74,4 +74,36 @@ public class RegExTest {
         String email = "Shiwani12@gmail.com";
         Assert.assertFalse(obj.validEmail(email));
     }
+    @Test
+    public void validateMobileNoTest() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Valid mobile no of user");
+        String phoneNo = "+91 8908641811";
+        Assert.assertTrue(obj.validatePhoneNo(phoneNo));
+    }
+
+    @Test
+    public void validateMobileNoWithoutCountryCodeShouldFail() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Invalid mobile no of user without country code");
+        String phoneNo = "8908641811";
+        Assert.assertFalse(obj.validatePhoneNo(phoneNo));
+    }
+
+    @Test
+    public void validateMobileNoWithoutProperSimCodeShouldFail() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Invalid mobile no of user without proper sim code");
+        String phoneNo = "+91 6578641811";
+        Assert.assertFalse(obj.validatePhoneNo(phoneNo));
+    }
+
+    @Test
+    public void validateInvalidMobileNoShouldFail() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Invalid mobile no of user which is more than 10 numbers");
+        String phoneNo = "+91 65786418112";
+        Assert.assertFalse(obj.validatePhoneNo(phoneNo));
+    }
 }
+
