@@ -9,5 +9,8 @@ public class RegExMain {
     public boolean validateLastName(String lastName) {
         return Pattern.matches("[A-Z][a-z]{3,}",lastName);
     }
+    public boolean validEmail(String email) {
+        return Pattern.matches("^[a-z0-9+_.-]+@+[a-z]+.+[a-z]+.+[a-z]$",email);
+    }
 
 }

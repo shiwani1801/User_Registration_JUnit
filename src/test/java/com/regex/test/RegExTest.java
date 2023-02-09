@@ -51,4 +51,27 @@ public class RegExTest {
         String firstName = "pan";
         Assert.assertFalse(obj.validateLastName(firstName));
     }
+    @Test
+    public void validateEmailTest() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Valid email id of user");
+        String email = "shiwani12@gmail.com";
+        Assert.assertTrue(obj.validEmail(email));
+    }
+
+    @Test
+    public void validateEmailWithoutDomainShouldFail() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Invalid email id of user without domain");
+        String email = "shiwani12";
+        Assert.assertFalse(obj.validEmail(email));
+    }
+
+    @Test
+    public void validateEmailWithStartingFirstLetterCapitalShouldFail() {
+        RegExMain obj = new RegExMain();
+        System.out.println("Invalid email id of user having starting letter is capital");
+        String email = "Shiwani12@gmail.com";
+        Assert.assertFalse(obj.validEmail(email));
+    }
 }
