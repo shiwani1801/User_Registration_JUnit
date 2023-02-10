@@ -1,5 +1,6 @@
 package com.regex.test;
 
+import com.regex.assignments.InvalidUserDetailsException;
 import com.regex.assignments.RegExMain;
 import org.junit.Test;
 
@@ -9,7 +10,7 @@ public class RegExTest2 {
     RegExMain obj = new RegExMain();
 
     @Test
-    public void happyTest() {
+    public void happyTest() throws InvalidUserDetailsException {
         System.out.println("Valid first name, last name, email id, phone no and password of user");
 
         assertTrue(obj.validateFirstName(obj.firstName));
@@ -21,7 +22,7 @@ public class RegExTest2 {
     }
 
     @Test
-    public void sadTest() {
+    public void sadTest() throws InvalidUserDetailsException {
 
         assertFalse(obj.validateFirstName(obj.firstName));
         assertFalse(obj.validateLastName(obj.lastName));
